@@ -40,15 +40,14 @@ int main() {
     cout << "\nBusiest Airport(s) with count " << highestCount << ": \n";
     cout << busiestAirport << " " << highestCount << endl;
 
-    printInRange(aiportCounts, 50, 100);
-    printInRange(aiportCounts, 101, 500);
+    // print airports in specified ranges
     printInRange(aiportCounts, 5, 8); 
     printInRange(aiportCounts, 9, 12); 
-    
+
 
     return 0; 
 }
-
+// Function to print airports with traffic counts in the specified range
 void printInRange(const map<string, int>& airportCounts, int low, int high) {
     cout << "\nAirports with traffic counts in range [" << low << ", " << high << "]:\n";
     for (const auto& entry : airportCounts) {
