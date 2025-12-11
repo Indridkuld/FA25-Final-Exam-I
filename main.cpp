@@ -5,6 +5,8 @@
 
 using namespace std;
 
+void printInRange(const map<string, int>&, int low, int high);
+
 int main() {
     map<string, int> aiportCounts; 
 
@@ -38,5 +40,20 @@ int main() {
     cout << "\nBusiest Airport(s) with count " << highestCount << ": \n";
     cout << busiestAirport << " " << highestCount << endl;
 
+    printInRange(aiportCounts, 50, 100);
+    printInRange(aiportCounts, 101, 500);
+    printInRange(aiportCounts, 5, 8); 
+    printInRange(aiportCounts, 9, 12); 
+    
+
     return 0; 
+}
+
+void printInRange(const map<string, int>& airportCounts, int low, int high) {
+    cout << "\nAirports with traffic counts in range [" << low << ", " << high << "]:\n";
+    for (const auto& entry : airportCounts) {
+        if (entry.second >= low && entry.second <= high) {
+            cout << entry.first << " " << entry.second << endl;
+        }
+    }
 }
